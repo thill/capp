@@ -1,0 +1,22 @@
+{
+	"name": "capp",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	"extensions": [
+		"ms-azuretools.vscode-docker",
+		"ms-vscode.cpptools",
+		"vscjava.vscode-java-pack"
+	],
+	"workspaceMount": "",
+	"workspaceFolder": "/workspaces/capp",
+	"runArgs": [
+		"--volume=${localWorkspaceFolder}/../../:/workspaces/capp:z",
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined"
+	]
+}
